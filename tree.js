@@ -73,26 +73,55 @@ export default class BinarySearchTree {
         }
         return currentNode;
     }
-
+0
     levelOrder(callback) {
         // traverse the tree in breadth-first level order and call the callback on each node as it traverses, passing the whole node as an argument
     }
 
-    inOrder(callback) {
-        if (this.root === null) {
-            return;
+    getRoot() {
+        return this.root;
+    }
+
+    inOrder() {
+        // Left -> Mid -> Right
+        const tree = [];
+        function traverse(node) {
+            if (node !== null) {
+                traverse(node.left); // Recursive call
+                tree.push(node.value);
+                traverse(node.right);
+            }
         }
-        this.inOrder(this.root.left, callback);
-        callback(this.root.value);
-        this.inOrder(this.root.right, callback);
+        traverse(this.root); // Init
+        return tree;
     } 
     
-    preOrder(callback) {
-
+    preOrder() {
+        // Mid -> Left -> Right
+        const tree = [];
+        function traverse(node) {
+            if (node !== null) {
+                tree.push(node.value);
+                traverse(node.left);
+                traverse(node.right);
+            }
+        }
+        traverse(this.root);
+        return tree;
     } 
     
-    postOrder(callback) {
-
+    postOrder() {
+        // Left -> Right -> Mid
+        const tree = [];
+        function traverse(node) {
+            if (node !== null) {
+                traverse(node.left);
+                traverse(node.right);
+                tree.push(node.value);
+            }
+        }
+        traverse(this.root);
+        return tree;
     }
 
     height(node) {
