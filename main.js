@@ -1,29 +1,38 @@
-import Tree from "./tree.js";
+import BinarySearchTree from "./tree.js";
 
-const tree = new Tree();
+const binarySearchTree = new BinarySearchTree();
 
-// tree.buildTree(array);
+// binarySearchTree.buildTree(array);
 
-// tree.prettyPrint();
+// binarySearchTree.prettyPrint();
 
-// tree.insert(value);
+console.log(binarySearchTree.insert(50));
+console.log(binarySearchTree.insert(30));
+console.log(binarySearchTree.insert(20));
+console.log(binarySearchTree.insert(40));
+console.log(binarySearchTree.insert(70));
+console.log(binarySearchTree.insert(60));
+console.log(binarySearchTree.insert(80));
 
-// tree.deleteItem(value);
 
-// tree.find(value);
+// binarySearchTree.deleteItem(value);
 
-// tree.levelOrder(callback);
+console.log(binarySearchTree.find(20));
+console.log(binarySearchTree.find(100));
 
-// tree.inOrder(callback);
+// binarySearchTree.levelOrder(callback);
 
-// tree.preOrder(callback);
 
-// tree.postOrder(callback);
+console.log(binarySearchTree.inOrder());
+console.log(binarySearchTree.preOrder());
+console.log(binarySearchTree.postOrder());
 
-// tree.height(node);
+// binarySearchTree.postOrder(callback);
 
-// tree.depth(node);
+// binarySearchTree.height(node);
 
-// tree.isBalanced();
+// binarySearchTree.depth(node);
 
-// tree.rebalance();
+// binarySearchTree.isBalanced();
+
+// binarySearchTree.rebalance();
