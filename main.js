@@ -20,19 +20,18 @@ console.log(binarySearchTree.insert(80));
 console.log(binarySearchTree.find(20));
 console.log(binarySearchTree.find(100));
 
-// binarySearchTree.levelOrder(callback);
-
+console.log(binarySearchTree.levelOrder());
 
 console.log(binarySearchTree.inOrder());
 console.log(binarySearchTree.preOrder());
 console.log(binarySearchTree.postOrder());
 
-// binarySearchTree.postOrder(callback);
+console.log(binarySearchTree.height(binarySearchTree.find(50)));
+console.log(binarySearchTree.height(binarySearchTree.find(30)));
 
-// binarySearchTree.height(node);
+console.log(binarySearchTree.depth(binarySearchTree.find(70)));
+console.log(binarySearchTree.depth(binarySearchTree.find(40)));
 
-// binarySearchTree.depth(node);
-
-// binarySearchTree.isBalanced();
+console.log(binarySearchTree.isBalanced(binarySearchTree.find(40)));
 
 // binarySearchTree.rebalance();
