@@ -2,9 +2,7 @@ import BinarySearchTree from "./tree.js";
 
 const binarySearchTree = new BinarySearchTree();
 
-// binarySearchTree.buildTree(array);
-
-// binarySearchTree.prettyPrint();
+console.log(binarySearchTree.buildTree([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 console.log(binarySearchTree.insert(50));
 console.log(binarySearchTree.insert(30));
@@ -14,10 +12,9 @@ console.log(binarySearchTree.insert(70));
 console.log(binarySearchTree.insert(60));
 console.log(binarySearchTree.insert(80));
 
+binarySearchTree.deleteItem(20);
 
-// binarySearchTree.deleteItem(value);
-
-console.log(binarySearchTree.find(20));
+console.log(binarySearchTree.find(40));
 console.log(binarySearchTree.find(100));
 
 console.log(binarySearchTree.levelOrder());
@@ -34,4 +31,4 @@ console.log(binarySearchTree.depth(binarySearchTree.find(40)));
 
 console.log(binarySearchTree.isBalanced(binarySearchTree.find(40)));
 
-// binarySearchTree.rebalance();
+binarySearchTree.rebalance();
