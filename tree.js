@@ -73,13 +73,23 @@ export default class BinarySearchTree {
         }
         return currentNode;
     }
-0
-    levelOrder(callback) {
-        // traverse the tree in breadth-first level order and call the callback on each node as it traverses, passing the whole node as an argument
-    }
+    levelOrder() {
+        // traverse the tree in breadth-first level order
+        const tree = [];
+        const queue = [this.root];
 
-    getRoot() {
-        return this.root;
+        while (queue.length > 0) {
+            const node = queue.shift(); // Removes the first node from the queue and assign it
+            tree.push(node.value);
+
+            if (node.left) {
+                queue.push(node.left);
+            }
+            if (node.right) {
+                queue.push(node.right);
+            }
+        }
+        return tree;
     }
 
     inOrder() {
@@ -126,6 +136,14 @@ export default class BinarySearchTree {
 
     height(node) {
         // returns the given node’s height
+        if (!node) {
+            return 0;
+        }
+
+        const leftHeight = this.height(node.left);
+        const rightHeight = this.height(node.right); 
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 
     depth(node) {
